@@ -57,14 +57,14 @@ print(f"\nContext: {response.enough_context}")
 # Advanced filtering using Predicates
 # --------------------------------------------------------------
 
-predicates = client.Predicates("category", "==", "Shipping")
+predicates = client.Predicates("category", "==", "Services")
 results = vec.search(relevant_question, limit=3, predicates=predicates)
 
 
 predicates = client.Predicates("category", "==", "Shipping") | client.Predicates(
     "category", "==", "Services"
 )
-results = vec.search(relevant_question, limit=3, predicates=predicates)
+results = vec.search(relevant_question, limit=5, predicates=predicates)
 
 
 predicates = client.Predicates("category", "==", "Shipping") & client.Predicates(
